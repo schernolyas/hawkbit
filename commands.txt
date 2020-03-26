@@ -7,4 +7,7 @@ java -jar ./hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator
 
 java -jar ./hawkbit-example-mgmt-simulator/target/hawkbit-example-mgmt-simulator-0.3.0-SNAPSHOT-exec.jar
 
-docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672  -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin rabbitmq:3-management 
+docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672  -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:3-management 
+
+
+docker run --name hawkbit-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=root -p 3306:3306 -d mysql
